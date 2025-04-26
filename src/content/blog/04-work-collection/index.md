@@ -1,6 +1,6 @@
 ---
 title: "Work Collection"
-description: "How to add work experience."
+description: "How to add tools experience."
 date: "Mar 19 2024"
 ---
 
