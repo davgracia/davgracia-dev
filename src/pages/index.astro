@@ -17,12 +17,12 @@ const projects = (await getCollection("projects"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0,SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
-const allwork = (await getCollection("work"))
+const allTools = (await getCollection("tools"))
   .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
-  .slice(0,SITE.NUM_WORKS_ON_HOMEPAGE);
+  .slice(0,SITE.NUM_TOOLS_ON_HOMEPAGE);
 
-const work = await Promise.all(
-  allwork.map(async (item) => {
+const tools = await Promise.all(
+  allTools.map(async (item) => {
     const { Content } = await item.render();
     return { ...item, Content };
   })
@@ -33,32 +33,18 @@ const work = await Promise.all(
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
-      Hi, I'm Nano <span class="text-xl">👋🏻</span> 
+      ¡Hola!  <span class="text-xl">👋🏻</span>
     </h4>
     <div class="space-y-16">
       <section>
         <article class="space-y-4">
           <p class="animate">
-            I am a minimal, seo friendly, accessible portfolio and blog for developers. 
-            I am an even more lightweight version of my popular theme
-            <Link href="https://github.com/markhorn-dev/astro-sphere" aria-label="Astro Sphere on Github" external>
-              Astro Sphere
-            </Link>.
-            I have a lighthouse scores of 100 across the board for performance, 
-            accesibility, best practices and SEO.
+            Soy David, desarrollador de software y apasionado de la tecnología.
+            He creado este espacio para compartir ideas, aprendizajes y soluciones reales que surgen en mi día a día como programador.
           </p>
           <p class="animate">
-            I come packed with full type safety, a sitemap, an rss feed, markdown 
-            and mdx support (use components in your markdown) through astro integrations.
-            I am styled with tailwind and come preconfigured with light, dark and 
-            system/os theme preferences out of the box.
-          </p>
-          <p class="animate">
-            Visit
-            <Link href="https://github.com/markhorn-dev/astro-nano" aria-label="Astro Nano on Github" external>
-              Astro Nano on Github
-            </Link>
-            to fork the repository, read the docs or one-click deploy on Vercel or Netlify. 
+            Mi propósito es aportar valor, inspirar a otros profesionales y seguir aprendiendo junto a esta increíble comunidad.
+            Gracias por visitar mi blog, ¡espero que encuentres inspiración, conocimiento y nuevas ideas en cada visita!
           </p>
         </article>
       </section>
@@ -66,10 +52,10 @@ const work = await Promise.all(
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
-            Latest posts
+            Últimas entradas
           </h5>
           <Link href="/blog">
-            See all posts
+            Ver todas las entradas
           </Link>
         </div>
         <ul class="flex flex-col gap-4">
@@ -84,14 +70,14 @@ const work = await Promise.all(
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
-            Work Experience
+            Herramientas
           </h5>
-          <Link href="/work">
-            See all work
+          <Link href="/tools">
+            Ver todas las herramientas
           </Link>
         </div>
         <ul class="flex flex-col space-y-4">
-          {work.map(entry => (
+          {tools.map(entry => (
             <li>
               <div class="text-sm opacity-75">
                 {dateRange(entry.data.dateStart, entry.data.dateEnd)}
@@ -113,10 +99,10 @@ const work = await Promise.all(
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
+            Últimos proyectos
           </h5>
           <Link href="/projects">
-            See all projects
+            Ver todos los proyectos
           </Link>
         </div>
         <ul class="flex flex-col gap-4">
@@ -130,12 +116,12 @@ const work = await Promise.all(
 
       <section class="animate space-y-4">
         <h5 class="font-semibold text-black dark:text-white">
-          Let's Connect
+          ¿Conectamos?
         </h5>
         <article>
           <p>
-            If you want to get in touch with me about something or just to say hi,
-            reach out on social media or send me an email.
+            Si quieres ponerte en contacto conmigo o simplemente saludar 👋,
+            puedes escribirme por redes sociales o enviarme un correo electrónico. ¡Estaré encantado de leerte!
           </p>
         </article>
         <ul class="flex flex-wrap gap-2">
