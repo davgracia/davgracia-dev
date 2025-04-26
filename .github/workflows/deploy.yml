@@ -1,4 +1,4 @@
-name: Deploy Astro Blog to Production
+name: Deploy to production
 
 on:
   push:
