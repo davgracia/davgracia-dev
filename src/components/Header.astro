@@ -13,6 +13,12 @@ import { SITE } from "@consts";
         </div>
       </Link>
       <nav class="flex gap-1">
+        <Link href="/">
+          Inicio
+        </Link>
+        <span>
+          {`/`}
+        </span>
         <Link href="/blog">
           Blog
         </Link>
@@ -22,16 +28,15 @@ import { SITE } from "@consts";
         <Link href="/tools">
           Herramientas
         </Link>
+        {/*
         <span>
           {`/`}
         </span>
         <Link href="/projects">
           Proyectos
         </Link>
+        */}
       </nav>
-      <div class="bg-yellow-200 text-black text-center py-2 w-full">
-        Este sitio está en construcción. Gran parte de la información es ficticia.
-      </div>
     </div>
   </Container>
 </header>
